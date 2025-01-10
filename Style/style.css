@@ -1,20 +1,27 @@
+/* General Reset */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
+/* Header and Footer */
 header, footer {
   background-color: #333;
   color: #fff;
   text-align: center;
-  padding: 1rem 0;
+  padding: 1rem;
 }
 
+/* Search Container */
 #search-container {
   display: flex;
   justify-content: center;
-  margin: 2rem;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem;
+  flex-wrap: wrap;
 }
 
 #search-input {
@@ -26,21 +33,35 @@ header, footer {
 #search-button {
   padding: 0.5rem 1rem;
   font-size: 1rem;
-  margin-left: 0.5rem;
   cursor: pointer;
 }
 
 #results-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* background-color: #0056b3; */
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to next row */
+  justify-content: space-between; /* Distribute items evenly */
+  gap: 10px; /* Space between items */
+  margin: 20px;
+  
+}
+
+/* Meal Grid */
+.meal-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 1rem;
   gap: 1rem;
-  padding: 1rem;
 }
 
 .meal-card {
   border: 1px solid #ddd;
-  padding: 1rem;
+  
   text-align: center;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .meal-card img {
@@ -49,15 +70,31 @@ header, footer {
   border-radius: 5px;
 }
 
-button {
-  background-color: #007BFF;
+/* Show All Button */
+.show-all-button {
+  display: block;
+  margin: 2rem auto;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
   color: #fff;
+  background-color: #007BFF;
   border: none;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
   border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
 }
 
-button:hover {
+.show-all-button:hover {
   background-color: #0056b3;
 }
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+  .meal-card {
+      flex: 1 1 calc(25% - 1rem); /* 4 items per row on larger screens */
+      max-width: calc(25% - 1rem);
+  }
+}
+
+
+
