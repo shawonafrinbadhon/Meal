@@ -1,47 +1,63 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  header, footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 15px;
-  }
-  main {
-    padding: 20px;
-  }
-  #search-section {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  #search-section input {
-    padding: 10px;
-    font-size: 16px;
-  }
-  #search-section button {
-    padding: 10px;
-    font-size: 16px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  #search-section button:hover {
-    background-color: #0056b3;
-  }
-  .meal {
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    margin: 10px;
-    padding: 10px;
-    text-align: center;
-    display: inline-block;
-    width: 300px;
-  }
-  .meal img {
-    width: 100%;
-    border-radius: 10px;
-  }
-  
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header, footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+#search-container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem;
+}
+
+#search-input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 300px;
+}
+
+#search-button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+
+#results-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.meal-card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  text-align: center;
+}
+
+.meal-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
