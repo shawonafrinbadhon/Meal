@@ -55,20 +55,40 @@ header, footer {
   gap: 1rem;
 }
 
+/* Meal Card */
 .meal-card {
-  border: 1px solid #ddd;
-  
+  flex: 1 1 calc(50% - 1rem); /* Default: 2 items per row on small screens */
+  max-width: calc(50% - 1rem); /* Ensures cards don't stretch too wide */
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+  padding: 1.5rem; /* Increased padding for a better layout */
   text-align: center;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition on hover */
 }
 
+.meal-card h3 {
+  font-size: 1.5rem; /* Increased font size */
+  font-weight: 600;  /* Bold font weight */
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+/* Meal Card Hover Effect */
+.meal-card:hover {
+  transform: translateY(-5px); /* Lift the card slightly on hover */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15); /* Enhanced shadow effect */
+}
+
+/* Meal Card Image */
 .meal-card img {
   max-width: 100%;
   height: auto;
-  border-radius: 5px;
+  border-radius: 8px; /* Rounded image corners */
+  margin-bottom: 1rem; /* Space below the image */
 }
+
 
 /* Show All Button */
 .show-all-button {
@@ -90,15 +110,29 @@ header, footer {
 .show-all-button:hover {
   background-color: #0056b3;
 }
-
-/* Responsive Styles */
-@media (min-width: 768px) {
+/* Mobile Styles (for phones up to 767px) */
+@media (max-width: 767px) {
   .meal-card {
-      flex: 1 1 calc(25% - 1rem); /* 4 items per row on larger screens */
-      max-width: calc(25% - 1rem);
+      flex: 1 1 calc(50% - 1rem); /* 2 items per row on mobile screens */
+      max-width: calc(50% - 1rem); /* Ensure 2 items per row */
   }
 }
 
+/* Styles for Tablets and Desktops (768px and above) */
+@media (min-width: 768px) {
+  .meal-card {
+      flex: 1 1 calc(33.33% - 1rem); /* 3 items per row on tablets/desktops */
+      max-width: calc(33.33% - 1rem);
+  }
+}
+
+/* Styles for Large Screens (1024px and above) */
+@media (min-width: 1024px) {
+  .meal-card {
+      flex: 1 1 calc(25% - 1rem); /* 4 items per row on large screens */
+      max-width: calc(25% - 1rem);
+  }
+}
 
 
 footer {
